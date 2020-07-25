@@ -1,0 +1,79 @@
+.territory{
+     padding: 43px 0 116px;
+     &__title{
+          margin-bottom: 46px;
+     }
+     &__map{
+          margin-bottom: 182px;
+     }
+     &__img{
+          width: 100%;
+     }
+     &__img--shedow{
+          box-shadow: -60px -66px 0px  #F1F2F5;
+     }
+     &__info{
+          padding: 90px 100px 0 20px;
+     }
+     &__sub-title{
+          @include font(700,30px, 35px,$font-family);
+          text-transform: uppercase;
+          margin-bottom: 25px;
+          color:#000;
+     }
+     &__text{
+          @include font(400,15px, 18px,$font-family);
+          margin-bottom: 40px;
+          color:$header-color;
+     }
+     &__btn{
+          @include font(700,12px, 14px,$font-family);
+          letter-spacing: 2px;
+          text-transform: uppercase;
+          color: #FFFFFF;
+          background-color: $header-color;
+          outline: none;
+          border: 2px solid  $header-color;
+          padding: 20px 30px;
+          cursor: pointer;
+          transition: color .3s, background-color .3s;
+     }
+     &__btn:hover{
+          background-color: #FFFFFF;
+          color: $header-color;
+     }
+}
+@media(max-width:768px){
+     .territory{
+          padding: 0 0 106px;
+          &__title{
+               margin-bottom: 25px;
+          }
+          &__map{
+               margin-bottom: 48px;
+               order: 1;
+          }
+          &__picther{
+               order: 2;
+               margin-bottom: 20px;
+          }
+          &__img--shedow{
+               box-shadow: none;
+          }
+          &__info{
+               text-align: center;
+               padding: 0px 15px;
+               order: 3;
+          }
+          &__sub-title{
+               @include font(700,18px, 21px,$font-family);
+               margin-bottom: 20px;
+          }
+          &__text{
+               margin-bottom: 30px;
+          }
+          &__btn{
+               padding: 20px 34px;
+          }
+     }
+}

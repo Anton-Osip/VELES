@@ -1,0 +1,61 @@
+.advantage{
+     padding: 100px 0 45px;
+     &__title{
+          margin-bottom: 20px;
+     }
+     &__cards{
+          counter-reset: num ;  
+          margin-top: 30px;
+     }
+     &__card{width: 100%;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          position: relative;   
+          counter-increment: num ;
+          min-height:135px ;
+
+     }
+     &__text{
+          width: 182px;
+          @include font(700,16px, 19px,$font-family);
+          
+
+     }
+     &__num::before{
+          text-align: center;          
+          display: inline-block;
+          content: counter(num, decimal-leading-zero)' ';
+          @include font(400,20px, 51px,$font-family);
+          background-color:$elem-color ;
+          width: 51px;
+          height: 51px;
+          margin-right: 50px;
+     }
+     &__num::after{
+          position: absolute;
+          top: -25px;
+          // left: 145px;
+          content: counter(num, )' ';
+          color: rgba(0, 0, 0, 0.03);
+          @include font(700,80px, 94px,$font-family);
+     }
+}
+@media(max-width:768px){
+     .advantage{
+          padding: 0 0 25px;
+          &__title{
+               margin-bottom: 35px;
+          }
+          &__cards{
+               margin-top: 0;
+          }
+          &__card{
+               min-height:51px ;
+               margin-bottom: 35px;
+          }
+          &__num::after{
+               display: none;
+          }
+     } 
+}

@@ -1,0 +1,199 @@
+.header {
+     background-color: $header-color;
+     padding: 30px 0 40px;
+}
+
+.top-nav{
+     z-index: 999;
+     &__content{
+          display: flex;
+          align-items: center;
+          flex-wrap: wrap;
+     }
+     &__logo {
+          margin-right: 50px;
+          cursor: pointer;
+     }
+     &__list{
+          display: flex;
+          align-items: center;
+          list-style: none;
+     }
+     &__item {
+          margin-left: 30px;
+     }
+     &__link{
+          color:#fff;
+          text-transform: uppercase;
+          display: block;
+          @include font(400,13px, 30px,$font-family);
+          position: relative;
+     }
+     &__link::after{
+          content:" ";
+          display: block;
+          position: absolute;
+          bottom: 0;
+          right: 0;
+          left: 0;
+          width: 100%;
+          height: 2px;
+          background-color: #fff;
+          transform: translateX(-100%); 
+          opacity: 0;
+          transition: transform .3s, opacity .3s;        
+     }
+     &__link:hover.top-nav__link::after{
+          transform: translateX(0); 
+          opacity: 1;        
+     }
+     &__address {
+          display: flex;
+          align-items: center;
+     }
+     &__icon{
+          fill: #fff;
+          margin-left: 50px;
+     }
+     &__icon-tel{
+          animation: tel 3s ease-in-out infinite;     
+     }
+     &__tel{
+          display: block;
+          color:#fff;
+          text-transform: uppercase;
+          @include font(400,13px, 30px,$font-family);
+          margin-left: 10px;
+     }
+     &__cite{
+          display: block;
+          color:#fff;
+          @include font(400,10px, 30px,$font-family);
+          margin-left: 10px;
+     }
+}
+.menu{
+     display: none;
+     width: 24px;
+     cursor: pointer;
+     z-index: 999;
+     padding: 4px 0;
+     &__line{          
+          width: 24px;
+          height: 2px;
+          background-color: #fff;
+     }
+     &__line:nth-child(2){
+          margin: 5px 0;
+     }
+}
+@media(max-width:1156px){
+     .top-nav{
+          &__logo {
+               margin-bottom: 25px;
+          }
+          &__item {
+               margin-bottom: 25px;
+          }
+          &__address {
+               margin-left: 0;
+               margin-right: auto;
+          }
+     }
+}
+
+@media(max-width:768px){
+     .header {
+          padding: 0px;
+     }
+     .top-nav{
+          padding-bottom: 0;
+          padding-top: 30px;
+          position: absolute; 
+          top: 0;
+          left: 0;
+          bottom: 65px;
+          right: 0;
+          background:rgba( #000, .5);
+          z-index: 2;
+          &__content{
+               align-items: top;
+               justify-content: space-between;
+          }
+          &__logo {
+               z-index: 99;
+               margin-bottom: 0px;
+          }
+          &__item {
+               margin-bottom: 0px;
+          }
+          &__list{
+               position: absolute;
+               top: 0;
+               bottom: 0;
+               left: 0;
+               right: 0;               
+               background-color: $header-color;
+               display: flex;
+               flex-direction: column;
+               align-items: center;   
+               justify-content: center;     
+               z-index: 80; 
+               transform: translateY(-100%);
+               transition:transform .5s ;
+          }
+          &__list--active{
+               transform: translateY(0);  
+          }
+          &__item {
+               margin-left: 0;
+          }
+          &__item+&__item {
+               margin-top: 25px;
+          }
+          &__link{
+               @include font(400,14px, 30px,$font-family);
+          }
+          &__address {
+               display: none;
+               align-items: center;
+          }
+          &__icon{
+               display: none;
+          }
+     }
+     .menu{
+          display: block;
+          z-index: 99;
+     }
+     .menu--active{
+          width: 25px;
+          padding: 4px 0;
+          .menu__line{          
+               width: 36px;
+               margin: 0;
+               transition: transform .3s;
+          }
+          .menu__line:nth-child(1){
+               transform: rotateZ(45deg);
+               
+          }
+          .menu__line:nth-child(2){
+               display: none;          
+          }
+          .menu__line:nth-child(3){
+               transform: rotateZ(-45deg)
+               translateX(2px)translateY(-1px);
+
+          }
+     }
+}
+
+@keyframes tel{
+0%{transform:  translateX(-1px);}
+20%{transform:  translateX(1px);}
+40%{transform:  translateX(-1px);}
+60%{transform:  translateX(1px);}
+80%{transform:  translateX(0px);}
+100%{transform:  translateX(0px);}
+}

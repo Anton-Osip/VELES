@@ -1,0 +1,105 @@
+.rent{
+     background-color: $header-color;
+     padding-top: 112px;
+     &__inner{
+          position: relative;
+          display: flex;
+     }
+     &__titel{
+          text-transform: uppercase;
+          color:#fff;
+          letter-spacing: 0.12em;
+          margin-top: 70px;
+          margin-bottom: 30px;
+          @include font(700,27px, 32px,$font-family);
+     }
+     &__text{
+          @include font(400,15px, 18px,$font-family);
+          color:#fff;
+          margin-bottom: 40px;
+     }
+     &__btn{
+          letter-spacing: 2px;
+          background-color: transparent;
+          @include font(700,12px, 14px,$font-family);
+          padding: 20px 30px;
+          border: 1px solid #FFFFFF;
+          outline: none;
+          margin-bottom: 130px;
+          color:#FFF;
+          cursor: pointer;
+          transition:background-color .3s, border-color .3s,color .3s ;
+     }
+     &__btn:hover{
+          background-color: $elem-color;
+          border-color: $elem-color;
+          color:$header-color;
+     }
+     &__slide{
+          width: 50%;
+          position: absolute;
+          bottom: -84px;
+          right: 0;
+     }
+     &__img{
+          object-fit: cover;
+          width: 100%;
+          max-height: 570px;
+     }
+}
+@media(max-width:768px){
+     .rent{
+          padding-top: 0;
+          &__inner{
+               position: relative;
+               order: 2;
+          }
+          &__titel{
+               text-align: center;
+               margin-top: 410px;
+               margin-bottom: 20px;
+               @include font(700,18px, 21px,$font-family);
+          }
+          &__text{
+               @include font(400,15px, 18px,$font-family);
+               margin-bottom: 30px;
+               text-align: center;
+          }
+          &__btn{
+               width: 100%;
+               letter-spacing: 2px;
+               @include font(700,12px, 14px,$font-family);
+               padding: 20px 15px;
+               margin-bottom: 40px;
+          }
+          &__slide{
+               padding: 0 15px;
+               width: 100%;
+               left: 0;
+               right: 0;
+               top: -46px;
+               bottom: auto;
+          }
+     }
+}
+@media(max-width:668px){
+     .rent{
+     &__titel{
+          margin-top: 330px;
+          }
+     }
+}
+@media(max-width:568px){
+     .rent{
+     &__titel{
+          margin-top: 290px;
+          }
+     }
+}
+@media(max-width:426px){
+     .rent{
+     &__titel{
+          margin-top: 180px;
+          }
+     }
+}

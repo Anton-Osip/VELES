@@ -1,0 +1,82 @@
+.useful{
+     background-color: $bg-color;
+     padding: 214px 0 25px;
+     &__title{
+          margin-bottom: 70px;
+     }
+     &__card{
+          display: block;
+          margin-bottom: 45px;
+          transition: transform .3s;
+          position: relative;
+          box-shadow: 0px 30px 80px rgba(0, 0, 0, 0.102355);
+     }
+     &__map{
+          display: inline-block;
+          position: absolute;
+          top: 0;
+          left: 0px;
+          width: 57px;
+          height: 54px;
+          padding: 17px 0 17px 60px;
+          background: $elem-color url(../../img/useful_map.png) no-repeat center left 10px;
+          overflow: hidden;
+          white-space: nowrap;
+          text-overflow: ellipsis;
+          @include font(400,0px, 21px,$font-family);
+          color:$header-color;
+          transition:width .2s , font-size .5s;          
+          z-index: 55;
+     }
+     &__img{
+          width: 100%;
+          height: 345px;
+     }
+     &__text-wrapper{
+          width: 100%;
+          min-height: 116px;
+          padding: 15px 15px 15px 30px;
+          background-color: #fff;
+          display: flex;
+          align-items: center;
+     }
+     &__text{
+          @include font(700,18px, 21px,$font-family);
+          text-transform: uppercase;
+          color: $header-color;
+
+     }
+     &__card:hover{
+          transform: translateY(-20px);
+     }
+     &__card:hover &__map{
+          width: 330px;          
+          font-size: 18px ;
+          z-index: 55;
+     }
+}
+@media(max-width:768px){
+     .useful{
+          background-color: #fff;
+          padding: 60px 0 5px;
+          &__title{
+               margin-bottom: 44px;
+          }
+          &__card{
+               margin-bottom: 35px;
+          }
+          &__text-wrapper{
+               min-height: 90px;
+               padding: 0 15px   ;
+               justify-content: center;
+          }
+          &__text{
+               text-align: center;
+               @include font(400,14px, 21px,$font-family);
+          }
+          &__card:hover &__map{
+               width: 270px;          
+               font-size: 14px ;
+          }
+     }
+}
