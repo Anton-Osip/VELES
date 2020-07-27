@@ -160,6 +160,7 @@
           }
           &__icon{
                display: none;
+               fill:#fff
           }
      }
      .menu{
@@ -190,10 +191,10 @@
 }
 
 @keyframes tel{
-0%{transform:  translateX(-1px);}
-20%{transform:  translateX(1px);}
-40%{transform:  translateX(-1px);}
-60%{transform:  translateX(1px);}
-80%{transform:  translateX(0px);}
-100%{transform:  translateX(0px);}
+0%{transform:  translateX(0px); fill:#fff;}
+20%{transform:  translateX(-1px)  translateY(-5px) ;fill:#00FF00;}
+40%{transform:  translateX(1px)  translateY(-5px);fill:#00FF00;}
+60%{transform:  translateX(-1px)  translateY(-5px);fill:#00FF00;}
+80%{transform:  translateX(1px)  translateY(-5px);fill:#00FF00;}
+100%{transform:  translateX(0px); fill:#fff;}
 }
