@@ -76,7 +76,11 @@
 }
 @media(max-width:768px){
      .slider{
+          height: 100vh;
           padding-top: 0px;
+          &__inner{
+               height: 100%;
+          }
           &__info{
                position: absolute;
                bottom: 0;
@@ -102,17 +106,14 @@
                margin-bottom: 47px;
                z-index: 4;
           }
-          &__container{
-               height: 100vh;
-          }
           &__track{
                height: 100vh;
-
           }
           &__wrapper{
                position: relative;
                width: 100%;
                bottom: 0;
+               max-height: none;
           }
           &__control{
                margin-bottom: 22px;
