@@ -111,12 +111,11 @@
           height: 100vh;
           width: 100%;
           padding-bottom: 0;
-          padding-top: 30px;
           position: absolute; 
           background:rgba( #000, .5);
           z-index: 2;
           &__content{
-               align-items: top;
+               padding-top: 30px;
                justify-content: space-between;
           }
           &__logo {
