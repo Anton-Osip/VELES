@@ -104,6 +104,9 @@
           }
           &__container{
                height: 100vh;
+          }
+          &__track{
+               height: 100vh;
 
           }
           &__wrapper{
@@ -117,5 +120,6 @@
           &__img{
                max-height: none;
      } 
+}
 }
 
